@@ -1,14 +1,21 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/dhnaranjo/dbc/week7/dbc-pitch-day-voting/spec/routing/routes_spec.rb": [
+      "/home/dhnaranjo/dbc/week7/dbc-pitch-day-voting/spec/controllers/pitches_controller_spec.rb": [
         1,
         null,
         1,
         null,
+        null,
         1,
         1,
         1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
         null,
         null,
         null
@@ -267,12 +274,18 @@
         1,
         null
       ],
+      "/home/dhnaranjo/dbc/week7/dbc-pitch-day-voting/app/controllers/pitches_controller.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
       "/home/dhnaranjo/dbc/week7/dbc-pitch-day-voting/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ]
     },
-    "timestamp": 1500507678
+    "timestamp": 1500508516
   }
 }
