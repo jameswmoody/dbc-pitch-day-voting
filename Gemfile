@@ -42,6 +42,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'simplecov', :require => false
   gem 'rspec-rails', '~> 3.5'
+  gem 'faker'
 end
 
 group :development do
