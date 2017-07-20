@@ -69,9 +69,9 @@ describe PitchesController do
         expect(flash[:notice]).to eq 'pitch was successfully created.'
       end
 
-      it "redirects to the index" do
+      it "redirects to pitches#index" do
         create_pitch
-        expect(response).to redirect_to root_path
+        expect(response).to redirect_to pitches_path
       end
     end
   end

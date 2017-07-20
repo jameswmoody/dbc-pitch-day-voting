@@ -22,7 +22,7 @@ Reporters—who had not made inquiries in regard to the topic and remained uncer
       fill_in 'pitch_description', with: pitch[:description]
       fill_in 'pitch_pitchers', with: pitch[:pitchers]
 
-      click_button('submit')
+      click_button('submit-new-pitch')
       
       expect(page).to have_content pitch[:title]
       expect(page).to have_content pitch[:description]
