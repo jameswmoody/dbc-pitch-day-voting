@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+
+.container {
+	display: grid;
+	grid-template-rows: 10% 80% 10%;
+	grid-template-columns: 10% 80% 10%;
+	margin: 0 auto;
+	width: 80%;
+
+}
+
+h1.welcome {
+	grid-column: 2;
+	grid-row: 2;
+	margin: 0;
+  	text-align: center;
+	font-size: 200px;
+  	/*border: black dotted 1px;*/
+}
+
+p.welcome {
+	margin: 0;
+	align-self: end;
+	grid-column: 2;
+	grid-row: 1;
+	font-size: 36px;
+	/*border: black dotted 1px;*/
+}

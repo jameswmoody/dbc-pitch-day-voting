@@ -16,7 +16,7 @@ feature 'index content display' do
       pitch_obj_one = Pitch.create(pitch_one)
       pitch_obj_two = Pitch.create(pitch_two)
 
-      visit '/'
+      visit '/pitches'
 
       expect(page).to have_content pitch_obj_one.title
       expect(page).to have_content pitch_obj_one.pitchers
