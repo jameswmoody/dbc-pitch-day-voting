@@ -1,4 +1,3 @@
-# PostgreSQL. Versions 9.1 and up are supported.
 #
 # Install the pg driver:
 #   gem install pg
@@ -83,3 +82,4 @@ production:
   database: dbc-pitch-day-voting_production
   username: dbc-pitch-day-voting
   password: <%= ENV['DBC-PITCH-DAY-VOTING_DATABASE_PASSWORD'] %>
+
