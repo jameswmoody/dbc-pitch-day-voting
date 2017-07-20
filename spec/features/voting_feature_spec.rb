@@ -38,7 +38,15 @@ feature 'voting on pitches' do
 			expect(page).to have_content pitch_obj_two.description
 			expect(page).to have_content pitch_obj_two.pitchers
 		end
-		scenario 'the user can rank pitches' 
+		scenario 'the user can rank pitches' do 
+			visit '/votes'
+
+			expect(page).
+			within("#rank-buttons-container") do
+				click_button("#up")
+			end
+			expect()
+		end
 		scenario 'the user can hide pitches they do not like' do
 			visit '/votes'
 			my_box = ""
@@ -49,7 +57,6 @@ feature 'voting on pitches' do
 			end
 			expect(my_box).to be_checked
 		end
-
 		scenario 'the user can submit their final pitch ranking'
 		scenario 'the user can edit their pitch ranking'
 	end
