@@ -4,7 +4,11 @@ class PitchesController < ApplicationController
   end
 
   def new
-    @pitch = Pitch.new
+    if logged_in?
+      @pitch = Pitch.new
+    else
+      redirect_to root_url
+    end
   end
 
   def create
