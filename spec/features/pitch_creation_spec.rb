@@ -24,7 +24,9 @@ feature "pitch creation" do
 
       click_button('submit')
       
-      expect(Pitch.last).to eq Pitch.new(pitch) 
+      expect(page).to have_content pitch[:title]
+      expect(page).to have_content pitch[:description]
+      expect(page).to have_content pitch[:pitchers]
     end
   end
 end

@@ -39,7 +39,8 @@ describe PitchesController do
     end
     it "assigns a new user to @user" do
       get :new
-      expect(assigns(:pitch).attributes).to eq Pitch.new.attributes
+      expect(assigns(:pitch)).to be_a Pitch
+      expect(assigns(:pitch)).to_not be_persisted
     end
     it "renders the :index template" do
       get :new
@@ -64,13 +65,11 @@ describe PitchesController do
       end
 
       it "sets a notice that the user was successfully created" do
-        pending
         create_pitch
         expect(flash[:notice]).to eq 'pitch was successfully created.'
       end
 
       it "redirects to the index" do
-        pending
         create_pitch
         expect(response).to redirect_to root_path
       end
