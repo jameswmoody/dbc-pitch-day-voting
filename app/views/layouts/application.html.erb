@@ -13,7 +13,7 @@
       <% if logged_in? %>
       <%= link_to 'Log Out', logout_path, method: :delete %>
       <% else %>
-      <a href="/auth/github"><button class="login">Sign in with Github</button></a>
+      <a id="login-github" href="/auth/github"><button class="login">Sign in with Github</button></a>
       <% end %>
     </nav>
     <%= yield %>
