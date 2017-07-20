@@ -9,6 +9,12 @@ class PitchesController < ApplicationController
 
   def create
     @pitch = Pitch.new(pitch_params)
+
+    if @pitch.save
+      redirect_to root_path, notice: 'pitch was successfully created.'
+    else
+      render :new, status: 422
+    end
   end
 
   private

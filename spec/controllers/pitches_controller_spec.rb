@@ -51,7 +51,7 @@ describe PitchesController do
     context "when valid params are passed" do
 
       def create_pitch
-        post :create, { pitch: { title: 'Killer Pitch!', description: "DISRUPTION!", pitchers: "Frankie!" } }
+        post :create, params: { pitch: { title: 'Killer Pitch!', description: "DISRUPTION!", pitchers: "Frankie!" } }
       end
 
       it "responds with status code 302" do
