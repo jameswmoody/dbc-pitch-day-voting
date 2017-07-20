@@ -31,6 +31,7 @@ gem 'octokit', "~> 4.0"
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'capybara'
+gem 'jquery-rails'
 
 
 # Use Capistrano for deployment
