@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   belongs_to :cohort
   has_many :pitches
+  has_many :votes, foreign_key: 'voter_id'
 
   def self.find_or_create_from_auth(auth)
     nickname = auth['info']['nickname']
@@ -23,9 +24,9 @@ class User < ApplicationRecord
 
   def make_any_new_votes
     # MUST BE MODIFIED FOR PITCHES IN CURRENT COHORT
-    if self.votes.count < Pitches.count
-      Pitches.all.each do |pitch|
-        Vote.find_or_create_by(user: self, pitch: pitch)
+    if self.votes.count < Pitch.count
+      Pitch.all.each do |pitch|
+        Vote.find_or_create_by(voter: self, pitch: pitch)
       end
     end
     self.votes
