@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170720012149) do
+ActiveRecord::Schema.define(version: 20170721005841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20170720012149) do
     t.string "name"
     t.date "start"
     t.date "end"
+    t.text "url"
   end
 
   create_table "pitches", force: :cascade do |t|
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(version: 20170720012149) do
     t.string "pitchers"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,6 +40,16 @@ ActiveRecord::Schema.define(version: 20170720012149) do
     t.string "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "cohort_id"
+    t.index ["cohort_id"], name: "index_users_on_cohort_id"
   end
 
+  create_table "valid_users", force: :cascade do |t|
+    t.text "nickname"
+    t.bigint "cohort_id"
+    t.index ["cohort_id"], name: "index_valid_users_on_cohort_id"
+  end
+
+  add_foreign_key "users", "cohorts"
+  add_foreign_key "valid_users", "cohorts"
 end
