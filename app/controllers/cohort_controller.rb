@@ -1,5 +1,6 @@
 class CohortController < ApplicationController
   def update
-    Cohort.find
+
+    cohort.pitch_start = Time
   end
 end
