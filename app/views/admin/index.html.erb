@@ -1,6 +1,18 @@
 <h2>Admin Panel</h2>
 
-<%= form_for @cohort do |f| %>
-  <%= f.hidden_field :admin_action, :value => :pitch_start %>
-  <%= f.submit 'submit', id: 'submit-new-pitch' %>
+<% if @cohort.pitch_start && @cohort.pitch_end %>
+  Pitching over
+
+<% elsif @cohort.pitch_start && !@cohort.pitch_end %>
+  <%= form_for @cohort do |f| %>
+    <%= f.hidden_field :admin_action, :value => :pitch_end %>
+    <%= f.hidden_field :id, :value => @cohort.id %>
+    <%= f.submit 'End Pitch Day', id: 'end-pitch-day' %>
+  <% end %>
+<% else %>
+  <%= form_for @cohort do |f| %>
+    <%= f.hidden_field :admin_action, :value => :pitch_start %>
+    <%= f.hidden_field :id, :value => @cohort.id %>
+    <%= f.submit 'Start Pitch Day', id: 'start-pitch-day' %>
+  <% end %>
 <% end %>

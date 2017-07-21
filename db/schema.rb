@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 20170721192413) do
     t.date "start"
     t.date "end"
     t.text "url"
-    t.date "pitch_start"
-    t.date "pitch_end"
+    t.datetime "pitch_start"
+    t.datetime "pitch_end"
   end
 
   create_table "pitches", force: :cascade do |t|
