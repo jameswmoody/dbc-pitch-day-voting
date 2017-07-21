@@ -32,3 +32,14 @@ cohorts.each { |cohort| Cohort.create(
   end: cohort[2],
   url: "chi-#{cohort[0].parameterize}-#{cohort[1].year}"
 )}
+
+Cohort.create(
+  name: 'Staff',
+  start: Date.new(2014,1,1),
+  end: Date.new(2018,1,1),
+  url: 'Devbootcamp'
+)
+
+load = ValidUserLoad.new
+
+load.load_all_valid_users

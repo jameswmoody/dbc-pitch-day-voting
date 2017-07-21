@@ -18,7 +18,7 @@ class User < ApplicationRecord
       user.save
       user
     else
-      p "NONNA THAT SHIT"
+      false
     end
   end
 end
