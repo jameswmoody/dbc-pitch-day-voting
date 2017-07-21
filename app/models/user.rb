@@ -5,9 +5,6 @@ class User < ApplicationRecord
   def self.find_or_create_from_auth(auth)
     nickname = auth['info']['nickname']
     valid_user = ValidUser.find_by(nickname: nickname)
-    
-   # byebug
-
     if valid_user
       user = User.find_or_create_by(provider: auth['provider'], uid: auth['uid'])
 
@@ -22,5 +19,15 @@ class User < ApplicationRecord
     else
       false
     end
+  end
+
+  def make_any_new_votes
+    # MUST BE MODIFIED FOR PITCHES IN CURRENT COHORT
+    if self.votes.count < Pitches.count
+      Pitches.all.each do |pitch|
+        Vote.find_or_create_by(user: self, pitch: pitch)
+      end
+    end
+    self.votes
   end
 end
