@@ -1,6 +1,8 @@
 # Perfect Pitch
 Application that allows DBC phase 3 students to vote on final project pitches.
 
+[![CircleCI](https://circleci.com/gh/chi-rock-doves-2017/dbc-pitch-day-voting.svg?style=shield)](https://circleci.com/gh/chi-rock-doves-2017/dbc-pitch-day-voting)
+
 ## Team Pitch
 | Members Names  | Github Handles |
 | -------------- |:--------------:|
