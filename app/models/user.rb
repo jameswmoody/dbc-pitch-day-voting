@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   belongs_to :cohort
-
+  has_many :pitches
 
   def self.find_or_create_from_auth(auth)
     nickname = auth['info']['nickname']

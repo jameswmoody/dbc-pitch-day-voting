@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-xdescribe User do
+describe User do
 
   before(:all) do
-    User.create(nickname: "tom", name: "tom tom", email: "tom@tom.com", uid: "123456", provider: "github", token: "654321")
+    User.create(nickname: "dhnaranjo", name: "tom tom", email: "tom@tom.com", uid: "123456", provider: "github", token: "654321", cohort: Cohort.find_by(name: 'Rock Doves'))
   end
 
   let(:user) { User.last }
@@ -14,7 +14,7 @@ xdescribe User do
 
   describe "has attribute" do
     it "nickname" do
-      expect(user.nickname).to eq "tom"
+      expect(user.nickname).to eq "dhnaranjo"
     end
 
     it "uid" do
@@ -44,7 +44,7 @@ xdescribe User do
         auth =  {
           'provider' => 'github',
           'info' => {
-            'nickname' => 'tom',
+            'nickname' => 'dhnaranjo',
             'name' => 'tom tom',
             'email' => 'tom@tom.com'
           },
@@ -67,7 +67,7 @@ xdescribe User do
         auth =  {
           'provider' => 'github',
           'info' => {
-            'nickname' => 'tim',
+            'nickname' => 'kvrag',
             'name' => 'tim tim',
             'email' => 'tim@tim.com'
           },
