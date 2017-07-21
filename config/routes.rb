@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#delete"
 
   get '/votes', to: 'votes#index'
-  # post '/votes', to: 'votes#create'
+  post '/votes', to: 'votes#create'
 end

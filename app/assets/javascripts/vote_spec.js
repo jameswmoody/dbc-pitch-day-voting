@@ -1,1 +1,1 @@
-document.querySelectorAll('.vote-container').position().top;
+// document.querySelectorAll('.vote-container').position().top;
