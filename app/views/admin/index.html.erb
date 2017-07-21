@@ -8,21 +8,21 @@
 
 <%= form_for @cohort do |f| %>
   <%= f.hidden_field :admin_action, :value => :round_one_voting_start %>
-  <%= f.submit 'Start Round One Voting', id: 'start-round-one-voting' %>
+  <%= f.submit 'Start Round One Voting', id: 'start-round-one-voting', class: 'button-primary button--teal' %>
 <% end %>
 
 <%= form_for @cohort do |f| %>
   <%= f.hidden_field :admin_action, :value => :round_one_voting_end %>
-  <%= f.submit 'End Round One Voting', id: 'end-round-one-voting' %>
+  <%= f.submit 'End Round One Voting', id: 'end-round-one-voting', class: 'button-primary button--teal' %>
 <% end %>
 
 
 <%= form_for @cohort do |f| %>
   <%= f.hidden_field :admin_action, :value => :round_two_voting_start %>
-  <%= f.submit 'Start Round Two Voting', id: 'start-round-two-voting' %>
+  <%= f.submit 'Start Round Two Voting', id: 'start-round-two-voting', class: 'button-primary button--teal' %>
 <% end %>
 
 <%= form_for @cohort do |f| %>
   <%= f.hidden_field :admin_action, :value => :round_two_voting_end %>
-  <%= f.submit 'End Round Two Voting', id: 'end-round-two-voting' %>
+  <%= f.submit 'End Round Two Voting', id: 'end-round-two-voting', class: 'button-primary button--teal' %>
 <% end %>
