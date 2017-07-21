@@ -7,12 +7,12 @@
 		<% end %>
 	</div>
 	<div class="rank-buttons-container">
-		<%= form_tag('/votes', method: :post, id: "pitch#{vote_pitch.id}", remote: true) do %>
+		<%= form_tag('/votes', method: :post, id: "pitch#{vote_pitch.id}", class: "up-vote-button") do %>
 			<%= hidden_field_tag "pitch_id", "#{vote_pitch.id}" %>
 			<%= hidden_field_tag "change_value", "1" %>
 			<%= submit_tag("Up") %>
 		<% end %>
-		<%= form_tag('/votes', method: :post, id: "pitch#{vote_pitch.id}") do %>
+		<%= form_tag('/votes', method: :post, id: "pitch#{vote_pitch.id}", class: "down-vote-button") do %>
 			<%= hidden_field_tag "pitch_id", "#{vote_pitch.id}" %>
 			<%= hidden_field_tag "change_value", "-1" %>
 			<%= submit_tag("Down") %>
