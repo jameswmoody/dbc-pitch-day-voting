@@ -22,11 +22,12 @@ class User < ApplicationRecord
     end
   end
 
-  def make_any_new_votes
+  def make_round_votes(array_of_pitches, round)
     # MUST BE MODIFIED FOR PITCHES IN CURRENT COHORT
-    if self.votes.count < Pitch.count
-      Pitch.all.each do |pitch|
-        Vote.find_or_create_by(voter: self, pitch: pitch)
+    if self.votes.count < array_of_pitches.count
+      array_of_pitches.each_with_index do |pitch, index|
+        Vote.find_or_initialize_by(voter: self, pitch: pitch)
+        .update_attributes!(rank: index + 1, vote_round: round)
       end
     end
     self.votes

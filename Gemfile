@@ -45,6 +45,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'faker'
   gem 'rails-controller-testing'
+  gem 'awesome_print'
 end
 
 group :development do

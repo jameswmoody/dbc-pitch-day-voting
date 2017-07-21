@@ -3,9 +3,14 @@ class Vote < ApplicationRecord
   belongs_to :pitch
 
   def rank_up
-    if self != Vote.first
-      higher_vote = Vote.find(self.id - 1)
-      self.pitch, higher_vote.pitch = higher_vote.pitch, self.pitch
+    if self != self.voter
+      .votes
+      .where(vote_round: self.vote_round)
+      .order(:rank)
+      .first
+      higher_vote = Vote.find_by(rank: self.rank - 1)
+      self.rank, higher_vote.rank = higher_vote.rank, self.rank
+      byebug
       self.save
       higher_vote.save
     end
@@ -13,11 +18,15 @@ class Vote < ApplicationRecord
   end
 
   def rank_down
-    if self != Vote.last
-      higher_vote = Vote.find(self.id + 1)
-      self.pitch, higher_vote.pitch = higher_vote.pitch, self.pitch
+    if self != self.voter
+      .votes
+      .where(vote_round: self.vote_round)
+      .order(:rank)
+      .last
+      lower_vote = Vote.find_by(rank: self.rank + 1)
+      self.rank, lower_vote.rank = lower_vote.rank, self.rank
       self.save
-      higher_vote.save
+      lower_vote.save
     end
     self
   end
