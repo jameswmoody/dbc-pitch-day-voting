@@ -5,6 +5,8 @@ class User < ApplicationRecord
   def self.find_or_create_from_auth(auth)
     nickname = auth['info']['nickname']
     valid_user = ValidUser.find_by(nickname: nickname)
+    
+   # byebug
 
     if valid_user
       user = User.find_or_create_by(provider: auth['provider'], uid: auth['uid'])
