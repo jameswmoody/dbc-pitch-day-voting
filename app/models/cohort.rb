@@ -12,7 +12,7 @@ class Cohort < ApplicationRecord
 
   def self.current_cohort
     Cohort.all.each do |cohort|
-     if cohort.phase_3?
+     if cohort.phase_3? && cohort.name != 'Staff'
         return cohort
       end
     end

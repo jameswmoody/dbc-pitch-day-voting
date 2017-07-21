@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
   def index
-    @cohort = Cohort.find_by(name: Cohort.current_cohort)
+    @cohort = Cohort.find(Cohort.current_cohort.id)
   end
 end
