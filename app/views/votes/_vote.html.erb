@@ -1,7 +1,21 @@
-<%= form_tag('/votes', method: :post, id: "pitch#{vote_pitch.id}") do %>
+<div class="vote-container">
 	<%= render 'pitches/pitch', pitch: vote_pitch %>
-	<%= check_box_tag(:hide) %>
-	<%= label_tag(:hide, "Hide") %>
-	<%= submit_tag("Up") %>
-	<%= submit_tag("Down") %>
-<% end %>
+	<div class="hide-button-container">
+		<%= form_tag('/votes', method: :post, id: "pitch#{vote_pitch.id}") do %>
+			<%= check_box_tag(:hide) %>
+			<%= label_tag(:hide, "Hide") %>
+		<% end %>
+	</div>
+	<div class="rank-buttons-container">
+		<%= form_tag('/votes', method: :post, id: "pitch#{vote_pitch.id}") do %>
+			<%= hidden_field_tag "pitch_id", "#{vote_pitch.id}" %>
+			<%= hidden_field_tag "change_value", "1" %>
+			<%= submit_tag("Up") %>
+		<% end %>
+		<%= form_tag('/votes', method: :post, id: "pitch#{vote_pitch.id}") do %>
+			<%= hidden_field_tag "pitch_id", "#{vote_pitch.id}" %>
+			<%= hidden_field_tag "change_value", "-1" %>
+			<%= submit_tag("Down") %>
+		<% end %>
+	</div>
+</div>

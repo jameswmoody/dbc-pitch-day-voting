@@ -40,12 +40,10 @@ feature 'voting on pitches' do
 		end
 		scenario 'the user can rank pitches' do 
 			visit '/votes'
-
-			expect(page).
 			within("#rank-buttons-container") do
 				click_button("#up")
 			end
-			expect()
+			expect(page.evaluate_script("")).to eq('-8000px')
 		end
 		scenario 'the user can hide pitches they do not like' do
 			visit '/votes'
