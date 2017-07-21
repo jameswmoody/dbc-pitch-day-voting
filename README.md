@@ -25,3 +25,49 @@ Application that allows DBC phase 3 students to vote on final project pitches.
 
 ## How to use Perfect Pitch
 > I don't know how to use this app yet SAD FACE
+
+## Overall
+- Total guest wall.
+- Invite functionality.
+- Mobile first.
+- DBC style guide.
+- Jumbotron landing page.
+- Store user email.
+- CSS Grid.
+- Github account creation/login.
+- When pitching is over, “Voting in Progress” view for P1/P2.
+
+## Voting
+- Top 5 ranking.
+- Ranked choice.
+- 2 rounds of voting.
+- Restricted to P3.
+- Save user ranking in order - can edit.
+- Ranking is not submitted until voting closes.
+
+## Pitches
+- Show winning pitches.
+- Fields: Pitches, App Name, Description.
+- No edits of pitches after closing.
+
+## Teams
+- Based on preferences.
+- Align user teams w/votes.
+- Teachers can rank student relations.
+- Team selection based on their pitch votes.
+
+## Admin
+- Explicit ending of pitches.
+- Admin/Teacher sets “Pitch Day”
+- \# of teams
+- Date
+- Pitches
+- \# of last round pitches
+
+
+
+### Resources
+[simplecov](https://github.com/colszowka/simplecov)
+[rspec/rails](https://github.com/rspec/rspec-rails)
+[capybara](https://github.com/teamcapybara/capybara)
+[octokit](https://github.com/octokit/octokit.rb)
