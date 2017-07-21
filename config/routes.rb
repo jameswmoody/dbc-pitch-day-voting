@@ -10,4 +10,5 @@ Rails.application.routes.draw do
 
   get '/votes', to: 'votes#index'
   post '/votes', to: 'votes#create'
+  patch '/votes', to: 'votes#update'
 end
