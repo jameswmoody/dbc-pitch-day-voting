@@ -12,10 +12,6 @@ class ValidUserLoad
       .map { |member| { nickname: member.login, cohort: cohort } }
   end
 
-  def load_valid_users(cohort)
-    ValidUser.create
-  end
-
   def load_all_valid_users
     Cohort.select(&:active?)
       .each do |cohort|
