@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20170721151546) do
-
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +44,11 @@ ActiveRecord::Schema.define(version: 20170721151546) do
     t.index ["cohort_id"], name: "index_users_on_cohort_id"
   end
 
+  create_table "valid_users", force: :cascade do |t|
+    t.text "nickname"
+    t.bigint "cohort_id"
+    t.index ["cohort_id"], name: "index_valid_users_on_cohort_id"
+  end
 
   create_table "votes", force: :cascade do |t|
     t.bigint "voter_id"
@@ -56,15 +59,7 @@ ActiveRecord::Schema.define(version: 20170721151546) do
     t.index ["voter_id"], name: "index_votes_on_voter_id"
   end
 
-  add_foreign_key "votes", "pitches"
-
-  create_table "valid_users", force: :cascade do |t|
-    t.text "nickname"
-    t.bigint "cohort_id"
-    t.index ["cohort_id"], name: "index_valid_users_on_cohort_id"
-  end
-
   add_foreign_key "users", "cohorts"
   add_foreign_key "valid_users", "cohorts"
-
+  add_foreign_key "votes", "pitches"
 end
